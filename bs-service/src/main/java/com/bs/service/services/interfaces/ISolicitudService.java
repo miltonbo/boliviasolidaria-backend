@@ -15,4 +15,6 @@ public interface ISolicitudService {
     List<PuntoSolicitud> obtenerListaPuntosSolicitudes();
 
     Solicitud obtenerDetalleSolicitud(Integer id) throws ControlledException;
+
+    Solicitud registrarSolicitud(Solicitud solicitud);
 }

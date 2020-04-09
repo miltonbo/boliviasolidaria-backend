@@ -98,6 +98,7 @@ public class ImageUtils {
         BufferedImage newImage = new BufferedImage(newWidth, newHeight,
                 BufferedImage.TYPE_INT_RGB);
         Graphics2D graphics2D = newImage.createGraphics();
+        graphics2D.setColor(Color.WHITE);
         graphics2D.setRenderingHint(RenderingHints.KEY_INTERPOLATION,
                 RenderingHints.VALUE_INTERPOLATION_BILINEAR);
         graphics2D.drawImage(image, 0, 0, newWidth, newHeight, null);

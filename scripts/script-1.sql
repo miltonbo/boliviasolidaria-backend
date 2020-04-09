@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS `solicitud`;
 DROP TABLE IF EXISTS `punto_acopio`;
 
 CREATE TABLE `solicitud` (
-  `id` int(20) NOT NULL,
+  `id` int(20) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(255) NOT NULL,
   `direccion` varchar(255) DEFAULT NULL,
   `necesidad` text DEFAULT NULL,
@@ -16,7 +16,7 @@ CREATE TABLE `solicitud` (
 );
 
 CREATE TABLE `punto_acopio` (
-  `id` int(20) NOT NULL,
+  `id` int(20) NOT NULL AUTO_INCREMENT,
   `titulo` varchar(255) NOT NULL,
   `descripcion` varchar(255) DEFAULT NULL,
   `responsable` varchar(255) DEFAULT NULL,

@@ -9,6 +9,7 @@ import com.bs.service.services.repositories.SolicitudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.logging.Logger;
@@ -41,5 +42,12 @@ public class SolicitudService implements ISolicitudService {
         if (solicitudOptional.isPresent())
             return solicitudOptional.get();
         throw new ControlledException("Solicitud no encontrada");
+    }
+
+    @Override
+    public Solicitud registrarSolicitud(Solicitud solicitud) {
+        solicitud.setId(null);
+        solicitud.setFechahoraSolicitud(new Date());
+        return solicitudRepository.save(solicitud);
     }
 }

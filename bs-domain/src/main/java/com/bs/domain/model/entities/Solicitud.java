@@ -46,10 +46,10 @@ public class Solicitud implements Serializable {
     @Column(name = "ci")
     private String ci;
 
-    @Column(name = "latitude")
+    @Column(name = "latitud")
     private Double lat;
 
-    @Column(name = "longitude")
+    @Column(name = "longitud")
     private Double lng;
 
     @Basic(optional = true)

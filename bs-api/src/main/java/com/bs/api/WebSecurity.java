@@ -25,10 +25,6 @@ import java.util.Arrays;
 @EnableWebSecurity
 public class WebSecurity extends WebSecurityConfigurerAdapter {
 
-    public static final String ISSUER = "BOLIVIASOLIDARIA";
-    public static final String HEADER_AUTHORIZATION = "Authorization";
-    public static final String HEADER_JWT_EXPIRATION_DATE = "JWTExpirationDate";
-    public static final String PREFIX_JWT = "Bearer ";
 
     @Value("${spring.servlet.multipart.max-file-size}")
     private String maxFileSize;
@@ -46,7 +42,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
                 .and().csrf().disable().authorizeRequests()
                     .antMatchers(HttpMethod.GET, "/").permitAll()
                     .antMatchers(HttpMethod.POST, "/").permitAll()
-                    .anyRequest().authenticated();
+                    .anyRequest().anonymous();
     }
 
     @Bean
@@ -59,10 +55,8 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("Access-Control-Allow-Headers", "Access-Control-Allow-Origin",
                 "Access-Control-Request-Method", "Access-Control-Request-Headers", "Origin",
-                "Cache-Control", "Content-Type",
-                WebSecurity.HEADER_AUTHORIZATION, WebSecurity.HEADER_JWT_EXPIRATION_DATE));
-        configuration.setExposedHeaders(Arrays.asList("Access-Control-Allow-Headers",
-                WebSecurity.HEADER_AUTHORIZATION, WebSecurity.HEADER_JWT_EXPIRATION_DATE));
+                "Cache-Control", "Content-Type"));
+        configuration.setExposedHeaders(Arrays.asList("Access-Control-Allow-Headers"));
         final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
         return source;

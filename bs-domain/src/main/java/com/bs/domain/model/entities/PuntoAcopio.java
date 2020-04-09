@@ -43,10 +43,10 @@ public class PuntoAcopio implements Serializable {
     @Column(name = "contacto")
     private String contacto;
 
-    @Column(name = "latitude")
+    @Column(name = "latitud")
     private Double lat;
 
-    @Column(name = "longitude")
+    @Column(name = "longitud")
     private Double lng;
     
 }

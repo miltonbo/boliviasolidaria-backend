@@ -1,0 +1,10 @@
+/bs-domain/target/
+/bs-service/target/
+**/nb-configuration.xml
+**/licenseheader.txt
+**/faces-config.NavData
+/bs-api/target/
+/.idea
+**/**/*.iml
+**/.mvn
+.web.iml

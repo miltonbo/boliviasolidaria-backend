@@ -38,7 +38,7 @@ public class PuntoAcopio implements Serializable {
     private String descripcion;
 
     @Column(name = "responsable")
-    private String necesidad;
+    private String responsable;
 
     @Column(name = "contacto")
     private String contacto;

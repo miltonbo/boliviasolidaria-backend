@@ -1,6 +1,7 @@
 package com.bs.api.endpoints;
 
 import com.bs.domain.exception.ControlledException;
+import com.bs.domain.model.dto.ws.response.RespuestaGeneral;
 import com.bs.domain.model.entities.Solicitud;
 import com.bs.domain.utils.HardCodeUtil;
 import com.bs.domain.utils.ImageUtils;
@@ -57,8 +58,12 @@ class SolicitudEndpoint {
 
     @PostMapping
     private Object registrarSolicitud(@RequestBody Solicitud solicitud) {
-        log.info("Creando nueva solicitud, datos: " + solicitud);
-        return solicitudService.registrarSolicitud(solicitud);
+        try {
+            log.info("Creando nueva solicitud, datos: " + solicitud);
+            return solicitudService.registrarSolicitud(solicitud);
+        } catch (ControlledException ce) {
+            return new ResponseEntity<>(new RespuestaGeneral(ce.getMessage()), HttpStatus.BAD_REQUEST);
+        }
     }
 
     @PostMapping(value = "/{id}/ci-foto")

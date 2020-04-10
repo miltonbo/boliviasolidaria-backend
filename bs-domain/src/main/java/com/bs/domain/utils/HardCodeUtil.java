@@ -9,4 +9,5 @@ public class HardCodeUtil {
     public static final int RESIZED_WIDTH_CI_IMAGE = 900;
     public static final int RESIZED_HEIGHT_CI_IMAGE = 900;
 
+    public static final int MAXIMO_DIAS_ATRAS_SOLICITUDES_VIGENTES = 3;
 }

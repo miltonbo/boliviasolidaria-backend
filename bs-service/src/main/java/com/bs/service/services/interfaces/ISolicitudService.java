@@ -16,5 +16,5 @@ public interface ISolicitudService {
 
     Solicitud obtenerDetalleSolicitud(Integer id) throws ControlledException;
 
-    Solicitud registrarSolicitud(Solicitud solicitud);
+    Solicitud registrarSolicitud(Solicitud solicitud) throws ControlledException;
 }

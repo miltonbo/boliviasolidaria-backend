@@ -9,7 +9,8 @@ public enum EstadoEnum {
     ENABLED("Activo", (byte)1), 
     DISABLED("Inactivo", (byte)2), 
     DELETED("Eliminado", (byte)3), 
-    LOCKED("Bloqueado", (byte)4);
+    LOCKED("Bloqueado", (byte)4),
+    EXPIRADO("Expirado", (byte) 5);
 
     private final String label;
     private final byte id;

@@ -24,8 +24,8 @@ public interface SolicitudRepository extends JpaRepository<Solicitud, Integer> {
                                       @Param("limiteFechaHora") Date limiteFechaHora);
 
     @Query("SELECT t FROM Solicitud t WHERE t.estado = :estado " +
-            "AND t.fechahoraSolicitud > :limiteFechaHora")
-    List<Solicitud> findByEstadoAndDate(@Param("estado") byte estado,
+            "AND t.fechahoraSolicitud < :limiteFechaHora")
+    List<Solicitud> findByEstadoAndDateMoreThan(@Param("estado") byte estado,
                                       @Param("limiteFechaHora") Date limiteFechaHora);
     
 }

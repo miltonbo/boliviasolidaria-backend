@@ -40,7 +40,7 @@ public class Procesos {
             log.info("Iniciando proceso de expirados::::");
             Date limiteFechaHora = DateUtil.getDateAddDays(new Date(),
                     -1 * HardCodeUtil.MAXIMO_DIAS_ATRAS_SOLICITUDES_VIGENTES);
-            List<Solicitud> solicitudes = solicitudRepository.findByEstadoAndDate(
+            List<Solicitud> solicitudes = solicitudRepository.findByEstadoAndDateMoreThan(
                     EstadoEnum.ENABLED.getId(), limiteFechaHora);
             solicitudes.forEach(solicitud -> {
                 solicitud.setEstado(EstadoEnum.EXPIRADO.getId());

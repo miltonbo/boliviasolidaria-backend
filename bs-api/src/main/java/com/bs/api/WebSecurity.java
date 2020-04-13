@@ -50,7 +50,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.setAllowedOrigins(Arrays.asList(
                 "https://boliviasolidaria.com", "https://www.boliviasolidaria.com",
-                "https://par.com:3000", "https://par.com"
+                "http://localhost:4200", "https://par.com"
         ));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("Access-Control-Allow-Headers", "Access-Control-Allow-Origin",
